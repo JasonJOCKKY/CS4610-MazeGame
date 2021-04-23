@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class AvatarController : MonoBehaviour
 {
-  public float runningSpeed;
-  public float turningSpeed;
-  private Animator animator;
+  public float runningSpeed = 5;
+  public float turningSpeed = 200;
+  private Animator _animator;
+  private CharacterController _charController;
   // Start is called before the first frame update
   void Start()
   {
-    animator = GetComponent<Animator>();
+    _animator = GetComponent<Animator>();
+    _charController = GetComponent<CharacterController>();
   }
 
   // Update is called once per frame
@@ -22,17 +24,18 @@ public class AvatarController : MonoBehaviour
     float translation = Input.GetAxis("Vertical") * runningSpeed;
     float rotation = Input.GetAxis("Horizontal") * turningSpeed;
 
-    animator.SetFloat("runningVelocity", translation);
-    animator.SetFloat("turningAngle", rotation);
+    _animator.SetFloat("runningVelocity", translation);
+    _animator.SetFloat("turningAngle", rotation);
 
     // Make it move 10 meters per second instead of 10 meters per frame...
     translation *= Time.deltaTime;
     rotation *= Time.deltaTime;
 
-    // Move translation along the object's z-axis
-    transform.Translate(0, 0, translation);
+    // // Move translation along the object's z-axis
+    _charController.Move(transform.forward * translation);
 
     // Rotate around our y-axis
     transform.Rotate(0, rotation, 0);
+
   }
 }

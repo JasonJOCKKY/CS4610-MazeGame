@@ -2404,6 +2404,7 @@ GameObject:
   - component: {fileID: 4693678028020260423}
   - component: {fileID: 1853014873}
   - component: {fileID: 1853014874}
+  - component: {fileID: 7816439963608253763}
   m_Layer: 0
   m_Name: Avatar Prefab
   m_TagString: Untagged
@@ -2467,6 +2468,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c2df71da811947a6b40c95a2cb240ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  runningSpeed: 5
+  turningSpeed: 200
+--- !u!143 &7816439963608253763
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5361706746056557821}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.8
+  m_Radius: 0.54
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.98, z: 0}
 --- !u!1 &5540553501355953233
 GameObject:
   m_ObjectHideFlags: 0

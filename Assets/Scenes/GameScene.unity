@@ -226,14 +226,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1853014874, guid: 62cb95699a9e645c590c2d79a8f5ba60, type: 3}
-      propertyPath: runningSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1853014874, guid: 62cb95699a9e645c590c2d79a8f5ba60, type: 3}
-      propertyPath: turningSpeed
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 4693678028020260423, guid: 62cb95699a9e645c590c2d79a8f5ba60, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -296,7 +288,7 @@ GameObject:
   - component: {fileID: 1159737078}
   - component: {fileID: 1159737077}
   - component: {fileID: 1159737076}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
