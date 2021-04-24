@@ -6,13 +6,17 @@ public class AvatarController : MonoBehaviour
 {
   public float runningSpeed = 5;
   public float turningSpeed = 200;
+  public float moveThreshold = 0.3f;
+  private Joystick _joystick;
   private Animator _animator;
   private CharacterController _charController;
+
   // Start is called before the first frame update
   void Start()
   {
     _animator = GetComponent<Animator>();
     _charController = GetComponent<CharacterController>();
+    _joystick = GameObject.FindGameObjectWithTag("MainCanvas").GetComponentInChildren<Joystick>();
   }
 
   // Update is called once per frame
@@ -21,8 +25,14 @@ public class AvatarController : MonoBehaviour
     // Get the horizontal and vertical axis.
     // By default they are mapped to the arrow keys.
     // The value is in the range -1 to 1
-    float translation = Input.GetAxis("Vertical") * runningSpeed;
-    float rotation = Input.GetAxis("Horizontal") * turningSpeed;
+    float translation =
+      (Mathf.Abs(Input.GetAxis("Vertical")) > moveThreshold ? Input.GetAxis("Vertical") : 0 +
+      Mathf.Abs(_joystick.Vertical) > moveThreshold ? _joystick.Vertical : 0)
+      * runningSpeed;
+    float rotation =
+      (Mathf.Abs(Input.GetAxis("Horizontal")) > moveThreshold ? Input.GetAxis("Horizontal") : 0 +
+      Mathf.Abs(_joystick.Horizontal) > moveThreshold ? _joystick.Horizontal : 0)
+      * turningSpeed;
 
     _animator.SetFloat("runningVelocity", translation);
     _animator.SetFloat("turningAngle", rotation);
@@ -31,7 +41,7 @@ public class AvatarController : MonoBehaviour
     translation *= Time.deltaTime;
     rotation *= Time.deltaTime;
 
-    // // Move translation along the object's z-axis
+    // Move translation along the object's z-axis
     _charController.Move(transform.forward * translation);
 
     // Rotate around our y-axis
