@@ -14,7 +14,7 @@ public class AvatarController : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    _animator = GetComponent<Animator>();
+    _animator = GetComponentInChildren<Animator>();
     _charController = GetComponent<CharacterController>();
     _joystick = GameObject.FindGameObjectWithTag("MainCanvas").GetComponentInChildren<Joystick>();
   }
@@ -38,11 +38,11 @@ public class AvatarController : MonoBehaviour
     _animator.SetFloat("turningAngle", rotation);
 
     // Make it move 10 meters per second instead of 10 meters per frame...
-    translation *= Time.deltaTime;
+    // translation *= Time.deltaTime;
     rotation *= Time.deltaTime;
 
     // Move translation along the object's z-axis
-    _charController.Move(transform.forward * translation);
+    _charController.SimpleMove(transform.forward * translation);
 
     // Rotate around our y-axis
     transform.Rotate(0, rotation, 0);
