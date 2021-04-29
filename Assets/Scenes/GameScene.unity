@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 87538236}
   - component: {fileID: 87538238}
   m_Layer: 0
-  m_Name: CM vcam1
+  m_Name: Player CM Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 193742126}
   m_Follow: {fileID: 1635460841}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 70
     OrthographicSize: 5
     NearClipPlane: 0.001
     FarClipPlane: 5000
@@ -245,8 +245,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87538235}
-  m_LocalRotation: {x: 0.03327794, y: 0, z: 0, w: 0.99944615}
-  m_LocalPosition: {x: 0, y: 0.5, z: -1.5}
+  m_LocalRotation: {x: -0.011625573, y: 0, z: 0, w: 0.9999324}
+  m_LocalPosition: {x: 0, y: 0.39, z: -0.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1364489424}
@@ -280,9 +280,9 @@ MonoBehaviour:
   m_Strategy: 0
   m_MaximumEffort: 4
   m_SmoothingTime: 0
-  m_Damping: 0
-  m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 1
+  m_Damping: 1
+  m_DampingWhenOccluded: 0.5
+  m_OptimalTargetDistance: 0
 --- !u!1 &110364959
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,7 +2553,7 @@ MonoBehaviour:
   wallPrefab: {fileID: 5340404084856068357, guid: aa3bedf33b499fb4a9542997544a8282, type: 3}
   wallPrefab1: {fileID: 4832364948469965752, guid: aabe48d421e876e4ca5b4e10bd8eba86, type: 3}
   startPoint: {x: 0, y: 0}
-  isTest: 1
+  isTest: 0
   cantMoves: []
 --- !u!4 &991704862
 Transform:
@@ -3273,7 +3273,7 @@ Camera:
     height: 1
   near clip plane: 0.001
   far clip plane: 5000
-  field of view: 40
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -3298,8 +3298,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348224209}
-  m_LocalRotation: {x: 0.03327794, y: 0, z: 0, w: 0.99944615}
-  m_LocalPosition: {x: 0, y: 0.5, z: -1.5}
+  m_LocalRotation: {x: -0.011625573, y: 0, z: 0, w: 0.9999324}
+  m_LocalPosition: {x: 0, y: 0.39, z: -0.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3416,7 +3416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 0.5, z: -1.5}
+  m_FollowOffset: {x: 0, y: 0.39, z: -0.43}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
